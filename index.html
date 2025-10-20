@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<title>User Feedback Form</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="wrapper" id="page-wrapper">
+<h1>User Feedback Form</h1>
+
+
+<section class="card" id="form-card">
+<form id="feedback-form" novalidate aria-describedby="formHelp">
+<div class="form-row" data-field>
+<label for="name">Name</label>
+<input id="name" name="name" type="text"
+placeholder="Jane Doe"
+data-tip="Enter your full name."
+maxlength="80" />
+<div class="meta">
+<span class="count" data-count-for="name">0 / 80</span>
+<span class="error" id="name-error" aria-live="polite"></span>
+</div>
+</div>
+
+
+<div class="form-row" data-field>
+<label for="email">Email</label>
+<input id="email" name="email" type="email"
+placeholder="jane@example.com"
+data-tip="We’ll only use this to follow up."
+maxlength="120" />
+<div class="meta">
+<span class="count" data-count-for="email">0 / 120</span>
+<span class="error" id="email-error" aria-live="polite"></span>
+</div>
+</div>
+
+
+<div class="form-row" data-field>
+<label for="comments">Comments</label>
+<textarea id="comments" name="comments" rows="5"
+placeholder="Tell us what you think… (Ctrl/⌘+Enter to submit)"
+data-tip="Share suggestions, bugs, or praise!"
+maxlength="500"></textarea>
+<div class="meta">
+<span class="count" data-count-for="comments">0 / 500</span>
+<span class="error" id="comments-error" aria-live="polite"></span>
+</div>
+</div>
+
+
+<div class="actions">
+<button id="submitBtn" type="submit">Submit Feedback</button>
+<button id="resetBtn" type="button" class="ghost">Reset (Esc)</button>
+</div>
+<p id="formHelp" class="help">All fields required. Character counts update in real time.</p>
+</form>
+
+
+<div id="tooltip" role="tooltip" hidden></div>
+</section>
+
+
+<section class="card" id="display-card">
+<h2>Recent Feedback</h2>
+<div id="feedback-display" aria-live="polite"></div>
+</section>
+</main>
+
+
+<script src="cp_1.js"></script>
+</body>
+</html>
