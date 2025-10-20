@@ -1,0 +1,54 @@
+:root {
+--bg: #0b1020;
+--card: #121a33;
+--ink: #e7ecff;
+--muted: #aab3d1;
+--accent: #7aa2ff;
+--accent-2: #59d6c2;
+--danger: #ff6b6b;
+--shadow: 0 10px 30px rgba(0,0,0,0.35);
+--radius: 16px;
+}
+* { box-sizing: border-box; }
+body {
+margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--ink);
+}
+.wrapper { width: min(1000px, 92%); margin: 40px auto; display: grid; gap: 24px; }
+.card { background: var(--card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+
+
+#feedback-form { display: grid; gap: 16px; }
+.form-row { display: grid; gap: 6px; }
+label { font-weight: 600; }
+input, textarea, button { font: inherit; color: var(--ink); }
+input, textarea {
+width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.15);
+background: #0d1530; padding: 12px 14px;
+}
+input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(122,162,255,0.25); }
+
+
+.meta { display: flex; justify-content: space-between; align-items: baseline; }
+.count { font-size: 0.85rem; color: var(--muted); }
+.error { font-size: 0.9rem; color: var(--danger); }
+
+
+.actions { display: flex; gap: 10px; }
+button { border: none; padding: 10px 14px; border-radius: 12px; cursor: pointer; }
+button#submitBtn { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #07101f; font-weight: 700; }
+button.ghost { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--ink); }
+
+
+#tooltip {
+position: absolute; transform: translate(-50%, calc(-100% - 12px));
+background: #0e1a3a; color: var(--ink); border: 1px solid rgba(255,255,255,0.15);
+border-radius: 10px; padding: 8px 10px; font-size: 0.9rem; pointer-events: none;
+}
+#tooltip[hidden] { display: none; }
+
+
+#feedback-display { display: grid; gap: 12px; margin-top: 8px; }
+.feedback-item { border: 1px solid rgba(255,255,255,0.1); background: #0c142b; border-radius: 14px; padding: 14px; }
+.feedback-head { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.95rem; }
+.feedback-name { font-weight: 700; color: var(--ink); }
+.feedback-body { margin-top: 6px; line-height: 1.5; }
